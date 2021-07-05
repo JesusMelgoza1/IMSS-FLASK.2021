@@ -1,0 +1,22 @@
+{
+    
+    "Nombre de la guia":
+        {
+            "secciones":{
+            "primer seccion":{
+
+                "primer pregunta": {
+                    "respuestas":["si", "no"],
+                    "ponderaciones": "None"
+                }
+            },
+            " segunda seccion ":{
+                    "primer pregunta": {
+                    "respuestas":["si", "no"],
+                    "ponderaciones": "None"
+                }
+            }
+        }
+    }
+
+}

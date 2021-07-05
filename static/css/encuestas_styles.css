@@ -1,0 +1,71 @@
+/*
+Fuente:
+*/
+
+
+/*
+Fuente : 
+Montserrat
+Medium 500
+
+Donde se uso: Titulo de la Guía
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+
+#encuesta-container{
+    background-color: #206a5d;
+    
+        
+}
+#titulo-encuesta{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 0;
+}
+#preguntas-container{
+    
+    background-color: white;
+    width: 60%;
+    border-radius: 13px; 
+    opacity: .95;
+    margin: 0 auto;
+
+}
+
+#main-container{
+    background-color: transparent;
+    justify-content: "center";
+    align-items: "center";
+    background-image: url(/static/images/Material-Backgrounds-02-1920-x-1080.png);
+    background-size: cover;
+    display: flex;
+    
+
+}
+
+
+.seccion{
+    padding: 1em;
+    font-family: 'Roboto', sans-serif;
+    
+
+}
+#pregunta{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    
+}
+#pagination{
+    padding: 20px;
+}
+#respuestas{
+    
+}
+
+/

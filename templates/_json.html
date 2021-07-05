@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_json</title>
+</head>
+<body>
+    
+
+
+{% for guia in _dict %}
+
+    <p > {{guia}}</p> 
+    
+      {% for seccion in _dict[guia] %}
+        {% if seccion != None %}
+
+                <p > {{seccion}}</p> 
+
+                    {% for preguntas in _dict[guia][seccion] %}
+
+                        {% for pregunta in _dict[guia][seccion][preguntas] %}
+
+                            <p id="pregunta" > {{pregunta}}</p>
+                            {% for i in range(0,_dict[guia][seccion][preguntas][pregunta]['respuestas']|length)  %} 
+                                {{ _dict[guia][seccion][preguntas][pregunta]['respuestas'][i]}}
+                            {% endfor %}
+                            
+                
+                        {% endfor %}
+                    
+                    {% endfor %}
+        {%else%}
+            {% for preguntas in _dict[guia][seccion] %}
+
+            {% for pregunta in _dict[guia][seccion][preguntas] %}
+
+                <p id="pregunta" > {{pregunta}}</p>
+                {% for i in range(0,_dict[guia][seccion][preguntas][pregunta]['respuestas']|length)  %} 
+                    <p>{{ _dict[guia][seccion][preguntas][pregunta]['respuestas'][i]}}</p>
+                    <p>{{ _dict[guia][seccion][preguntas][pregunta]['ponderacion'][i]}}</p>
+                {% endfor %}
+
+                
+
+            {% endfor %}
+        
+        {% endfor %}
+
+
+
+
+
+
+        {%endif%}
+        {% endfor %} 
+  
+{% endfor %}
+
+
+</body>
+</html>

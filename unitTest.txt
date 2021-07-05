@@ -1,0 +1,276 @@
+data = {
+  nombre_encuesta:{
+      "descripcion_seccion":{
+      preguntas:{
+          {
+              pregunta: "Descripcion",
+              respuestas: ['si', 'no'],
+              ponderacion
+          },
+      }
+  }
+}
+
+seccion, nombre_encuesta = "";
+
+seccion                                     row[descripcion_seccion]
+""                                           "Acontecimiento traumático severo"
+Acontecimiento traumático severo             "Acontecimiento traumático severo"
+Acontecimiento traumático severo             "este es otro ejemplo"
+este es otro ejemplo                         "este es otro ejemplo"
+
+
+si row[descripcion_seccion] != seccion:
+    Si es diferente: 
+        Append al diccionario (data)
+            data.append(
+                Acontecimiento traumático severo:{
+                preguntas:{
+                    {
+                        pregunta: "Descripcion",
+                        respuestas: ['si', 'no'],
+                        ponderacion
+                    },
+                 }
+                }
+            )
+            igualamos seccion --> row[descripcion_seccion]
+
+Si no son iguales
+    Append al diccionario:
+    data.append(
+        row[descripcion_seccion]:{
+            preguntas{
+                {
+                    pregunta: row[descripcion_pregunta],
+                    respuesta:row[respuestas],
+                    ponderacion: row[ponderacion]
+                }
+            }
+        }
+    )
+}
+
+
+{'Nombre_Encuesta': 'Guía de Referencia I  EJEMPLO DE CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS', 
+ 'Descripcion_seccion': 'I.- Acontecimiento traumático severo', 
+ 'Descripcion_Pregunta': 'Actos violentos que derivaron en lesiones graves?', 
+ 'Respuestas': 'SI,NO', 
+ 'Ponderacion': None}
+
+data.append( 
+    {    
+        result[0]['Nombre_Encuesta']:{          
+            result[0]['Descripcion_seccion']:{
+                'preguntas':{
+                    'pregunta':result[0]['Descripcion_seccion'],
+                    'respuestas':result[0]['Descripcion_seccion'],
+                    'ponderacion':None
+                }
+            }      
+        }
+    }  
+)
+
+ESTO ES LO QUE TENIAMOS CON ROGER
+
+
+data = []
+seccion = ""
+data.append
+for row in result:
+    if row["Descripcion_seccion"] != seccion:
+        data.append( 
+            {    
+                row['Nombre_Encuesta']:{          
+                    row['Descripcion_seccion']:{
+                        'preguntas':{
+                            'pregunta':row['Descripcion_Pregunta'],
+                            'respuestas':row['Respuestas'],
+                            'ponderacion':row['Ponderacion']
+                        }
+                    }      
+                }
+            } 
+            
+        )
+        seccion = row[
+            
+            "Descripcion_seccion"]
+    else:
+        data.append(
+            {
+                'preguntas':{
+                    'pregunta':row['Descripcion_seccion'],
+                    'respuestas':row['Descripcion_seccion'],
+                    'ponderacion':row['Ponderacion']
+                }
+              }
+            
+
+        )
+        
+data
+
+
+
+
+{
+'Guía de Referencia I  EJEMPLO DE CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS': {
+    'I.- Acontecimiento traumático severo': {
+        'preguntas': {
+            'Actos violentos que derivaron en lesiones graves?': {
+                'respuestas': 'SI,NO',
+                'ponderacion': None
+                }, 
+            'Amenazas?': {
+                'respuestas': 'SI,NO', 
+                'ponderacion': None
+                }, 
+            'Asaltos?': {
+                'respuestas': 'SI,NO', 
+                'ponderacion': None
+                }, 
+            'Cualquier otro que ponga en riesgo su vida o salud, y/o la de otras personas?': {
+                'respuestas': 'SI,NO', 
+                'ponderacion': None
+                }, 
+            'Secuestro?': {
+                'respuestas': 'SI,NO', 
+                'ponderacion': None}
+            }
+        }
+    }
+}
+
+if row data[row['Nombre_Encuesta']][row['Descripcion_seccion']]:
+
+        data[row['Nombre_Encuesta']][row['Descripcion_seccion']]["preguntas"][row['Descripcion_Pregunta']]={
+            'respuestas':row['Respuestas'],
+            'ponderacion':row['Ponderacion']
+
+
+{
+    Nombre encuesta:{
+        descripcion_seccion:{
+            preguntas:{
+                {
+
+                }
+            }
+        }
+    }
+}
+
+{'Guía de Referencia I  EJEMPLO DE CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS': {
+    'I.- Acontecimiento traumático severo': {
+        'preguntas': {
+            '¿Accidente que tenga como consecuencia la muerte, la pérdida de un miembro o una lesión grave?': {
+                    'respuestas': 'SI,NO',
+                    'ponderacion': None
+                    },
+            'Asaltos?': {
+                'respuestas': 'SI,NO', 
+                'ponderacion': None
+                },
+            'Actos violentos que derivaron en lesiones graves?': {
+                'respuestas': 'SI,NO',
+                'ponderacion': None},
+            'Secuestro?': {
+                'respuestas': 'SI,NO', 
+                'ponderacion': None
+                },
+            'Amenazas?': {
+                'respuestas': 'SI,NO', 
+                'ponderacion': None
+                },
+            'Cualquier otro que ponga en riesgo su vida o salud, y/o la de otras personas?': {
+                'respuestas': 'SI,NO',
+                'ponderacion': None}
+                }},
+  'II.- Recuerdos persistentes sobre el acontecimiento (durante el último mes):': {
+        'preguntas': {
+            '¿Ha tenido recuerdos recurrentes sobre el acontecimiento que le provocan malestares?': {
+            'respuestas': 'SI,NO',
+            'ponderacion': None
+            },
+            '¿Ha tenido sueños de carácter recurrente sobre el acontecimiento, que le producen malestar?': {
+                'respuestas': 'SI,NO',
+                'ponderacion': None
+                }
+            }
+         },
+  'III.- Esfuerzo por evitar circunstancias parecidas o asociadas al acontecimiento (durante el último mes):': {
+      'preguntas': {
+          '¿Se ha esforzado por evitar todo tipo de sentimientos, conversaciones o situaciones que le puedan recordar el acontecimiento?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None
+              },
+          '¿Se ha esforzado por evitar todo tipo de actividades, lugares o personas que motivan recuerdos del acontecimiento?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None
+              },
+          '¿Ha tenido dificultad para recordar alguna parte importante del evento?': {
+              'respuestas': ['SI','NO'],
+              'ponderacion': None
+              },
+          '¿Ha disminuido su interés en sus actividades cotidianas?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None
+              },
+          '¿Se ha sentido usted alejado o distante de los demás?': {   
+              'respuestas': 'SI,NO',
+              'ponderacion': None
+              },
+          '¿Ha notado que tiene dificultad para expresar sus sentimientos?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None},
+          '¿Ha tenido la impresión de que su vida se va a acortar, que va a morir antes que otras personas o que tiene un futuro limitado?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None}
+              }
+    },
+  'IV Afectación (durante el último mes):': {
+      'preguntas': {
+          '¿Ha tenido usted dificultades para dormir?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None},
+          '¿Ha estado particularmente irritable o le han dado arranques de coraje?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None},
+          '¿Ha tenido dificultad para concentrarse?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None},
+          '¿Ha estado nervioso o constantemente en alerta?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None},
+          '¿Se ha sobresaltado fácilmente por cualquier cosa?': {
+              'respuestas': 'SI,NO',
+              'ponderacion': None}}}}}
+data['Guía de Referencia I  EJEMPLO DE CUESTIONARIO PARA IDENTIFICAR A LOS TRABAJADORES QUE FUERON SUJETOS A ACONTECIMIENTOS TRAUMÁTICOS SEVEROS']={          
+                    "SECCION1":{
+
+
+
+
+ {% for preguntas in _dict[guia][seccion] %}
+
+                        {% for pregunta in _dict[guia][seccion][preguntas] %}
+
+                            <p id="pregunta" > {{pregunta}}</p>
+                            {% for i in range(0,_dict[guia][seccion][preguntas][pregunta]['respuestas']|length)  %} 
+                                {{ _dict[guia][seccion][preguntas][pregunta]['respuestas'][i]}}
+                            {% endfor %}
+                            
+                
+                        {% endfor %}
+                    
+                    {% endfor %}
+
+
+
+
+
+
+encuesta == "encuesta"
+encuesta = "enciesta"

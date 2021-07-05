@@ -1,0 +1,39 @@
+body{
+    background: url(/static/images/Material-Backgrounds-02-1920-x-1080.png) no-repeat center center fixed;
+    background-size: cover;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+}
+h1 {
+    position: absolute;
+    margin-top: 50px ;
+}
+.form-reg {
+    width: 900px;
+    background: #3b4652;
+    padding: 80px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    opacity: .95;
+}
+.Group-cuestions {
+    white-space: normal;
+}
+button{
+    margin-left: 600px;
+    
+}
+p{
+    margin-top: 40px;
+    font-size: 20px;
+}
+h2 {
+
+    margin-top: 30px;
+}

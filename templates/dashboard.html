@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+    
+     <!--AJAX-->
+     <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js "> </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- linkeamiento al archivo de estilos css -->
+    <link rel="stylesheet" href="/static/css/dashboard_styles.css">
+    <!-- linkeamiento al archivo js -->
+    <script src="static\js\dashboard.js"></script>
+    <script src="/static/js/obtenerDatosTrabajador.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="container" id="main-container">
+        <div class="jumbotron" id="tam-jum-muestra">
+            <h1 class="display-4">Tamaño de Muestra</h1>
+            <hr class="my-4">
+            <p class="lead">Cuantos trabajadores tienes en tu empresa?</p>
+            <p>El numero de tus trabajadores es fundamental para saber la guia que se debe aplicar</p>
+            <input type="text" id="inp-muestra" placeholder="Numero de trabajadores">
+            <a class="btn btn-primary btn-lg" id="btn-muestra" href="#" role="button">Muestra</a>
+        </div>
+
+        <!-- Jumbotron para mostar la cantidad de personas -->
+        <div class="jumbotron jumbotron-fluid" id="jum-muestra">
+            <div class="container" id="cnt-muestra">
+            </div>
+        </div>
+        <!-- Jumbotron para mostar la cantidad de personas -->
+
+        <div class="encuestas" id="btns-encuestas">
+
+            <!-- BOTON DE LA PRIMER ENCUESTA -->
+            <button type="button" data-toggle="modal" data-target="#contenido-modal-1 " id="btn-1" value="1"class="btn btn-primary btn-lg btn-block">Encuesta 1 </button>
+            <!-- BOTON DE LA SEGUNDA ENCUESTA CON SU MODAL -->
+            <button type="button" data-toggle="modal" data-target="#contenido-modal-1 " id="btn-2" value="2"class="btn btn-primary btn-lg btn-block">Encuesta 2</button>
+            
+            <!-- BOTON DE LA TERCERA ENCUESTAS-->
+            <button type="button" data-toggle="modal" data-target="#contenido-modal-1 " id="btn-3" value="3"class="btn btn-primary btn-lg btn-block">Encuesta 3</button>
+ 
+            <!-- MODAL DEL PRIMER BOTON DE LA PRIMERA ENCUESTA -->
+
+            <div class="modal fade" id="contenido-modal-1" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header text-center" id="modal-header">
+                            <h1 class="modal-title" id="title-modal-DatosEncuestado">Datos del trabajador</h1>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- MODAL BODY -->
+                        <div class="modal-body">
+                            <section class="Group-cuestions">
+                                <h2 class="text-center">El llenar esta Información, no es obligatorio</h2>
+                                <h4> <b>Información del trabajador:</b> </h4>
+                                <form  id="info-trab">
+
+                                    <div>
+                                        <h5>Sexo:</h5>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label" for="m">
+                                                <input type="radio" class="form-check-input" id="m" name="sexo"
+                                                    value="Masculino">Masculino</label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <label class="form-check-label" for="f">
+                                                <input type="radio" class="form-check-input" id="f" name="sexo"
+                                                    value="Femenino">Femenino</label>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h5>Edad en años:</h5>
+                                        <div class="opcion1">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="15-19">
+                                                    <input type="radio" class="form-check-input" id="15-19" name="Edad en años"
+                                                     value="15-19">15-19</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="45-49">
+                                                    <input type="radio" class="form-check-input" id="45-49" name="Edad en años"
+                                                    value="45-49">45-49</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion2">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="20-24">
+                                                    <input type="radio" class="form-check-input" id="20-24" name="Edad en años"
+                                                    value="20-24">20-24</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="50-54">
+                                                    <input type="radio" class="form-check-input" id="50-54" name="Edad en años"
+                                                    value="50-54">50-54</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="25-29">
+                                                    <input type="radio" class="form-check-input" id="25-29" name="Edad en años"
+                                                    value="25-29">25-29</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="55-59">
+                                                    <input type="radio" class="form-check-input" id="55-59" name="Edad en años"
+                                                    value="55-59">55-59</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion4">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="30-34">
+                                                    <input type="radio" class="form-check-input" id="30-34" name="Edad en años"
+                                                    value="30-34">30-34</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="60-64">
+                                                    <input type="radio" class="form-check-input" id="60-64" name="Edad en años"
+                                                    value="60-64">60-64</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion5">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="35-39">
+                                                    <input type="radio" class="form-check-input" id="35-39" name="Edad en años"
+                                                    value="35-39">35-39</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="65-69">
+                                                    <input type="radio" class="form-check-input" id="65-69" name="Edad en años"
+                                                    value="65-69">65-69</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion6">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="40-44">
+                                                    <input type="radio" class="form-check-input" id="40-44" name="Edad en años"
+                                                    value="40-44">40-44</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="70 o mas">
+                                                    <input type="radio" class="form-check-input" id="70 o mas" name="Edad en años"
+                                                    value="70 o mas">70 o mas</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuestion3">
+                                        <h5>Estado civil:</h5>
+                                        <section class="opcion1">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="casado">
+                                                    <input type="radio" class="form-check-input" id="casado" name="Estado civil"
+                                                    value="Casado">Casado</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="divorciado">
+                                                    <input type="radio" class="form-check-input" id="divorciado" name="Estado civil"
+                                                    value="Divorciado">Divorciado</label>
+                                            </div>
+                                        </section>
+                                        <section class="opcion2">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="soltero">
+                                                    <input type="radio" class="form-check-input" id="soltero" name="Estado civil"
+                                                    value="Soltero">Soltero</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="viudo">
+                                                    <input type="radio" class="form-check-input" id="viudo" name="Estado civil"
+                                                    value="Viudo">Viudo</label>
+                                            </div>
+                                    </div>
+                                        <div class="opcion3">
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="UnLi">
+                                                    <input type="radio" class="form-check-input" id="union libre" name="Estado civil"
+                                                    value="Union libre">Unión libre</label>
+                                            </div>
+                                        </div>
+                                    <div class="cuestion4">
+                                        <h5>Maximo nivel de estudios:</h5>
+                                        <div class="opcion1">
+                                            <h6>Sin Información:</h6>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="SinInf">
+                                                    <input type="radio" class="form-check-input" id="niv-est-sin" name="Nivel de estudios"
+                                                    value="Sin Información">Sin Información</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion2">
+                                            <h6>Primaria:</h6>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="PrimTerm">
+                                                    <input type="radio" class="form-check-input" id="PrimTerm" name="Nivel de estudios"
+                                                    value="Primaria Terminada">Terminada</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Prim-Inco">
+                                                    <input type="radio" class="form-check-input" id="Prim-inco" name="Nivel de estudios"
+                                                    value="Primaria Incompleta">Incompleta</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion3">
+                                            <h6>Secundaria:</h6>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="SecTerm">
+                                                    <input type="radio" class="form-check-input" id="Sec-Term" name="Nivel de estudios"
+                                                    value="Secundaria Terminada">Terminada</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="SecInco">
+                                                    <input type="radio" class="form-check-input" id="Sec-inco" name="Nivel de estudios"
+                                                    value="Secundaria Incompleta">Incompleta</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion4">
+                                            <h6>Preparatoria o Bachillerato:</h6>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Pre-Term">
+                                                    <input type="radio" class="form-check-input" id="Pre-Term" name="Nivel de estudios"
+                                                    value="Preparatoria Terminada">Terminada</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Prep-Inco">
+                                                    <input type="radio" class="form-check-input" id="Prep-inco" name="Nivel de estudios"
+                                                    value="Preparatoria Incompleta">Incompleta</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion5">
+                                            <h6>Técnico Superior:</h6>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Tec-Term">
+                                                    <input type="radio" class="form-check-input" id="Tec-Term" name="Nivel de estudios"
+                                                    value="Tecnico Superior Terminada">Terminada</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Tec-Inco">
+                                                    <input type="radio" class="form-check-input" id="Tec-inco" name="Nivel de estudios"
+                                                    value="Tecnico Superior Incompleta">Incompleta</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion6">
+                                            <h6>Licenciatura:</h6>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Lic-Term">
+                                                    <input type="radio" class="form-check-input" id="Lic-Term" name="Nivel de estudios"
+                                                    value="Licenciatura Terminada">Terminada</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Lic-Inco">
+                                                    <input type="radio" class="form-check-input" id="Lic-inco" name="Nivel de estudios"
+                                                    value="Licenciatura Incompleta">Incompleta</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion7">
+                                            <h6>Maestría:</h6>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Maes-Term">
+                                                    <input type="radio" class="form-check-input" id="Maes-Term" name="Nivel de estudios"
+                                                    value="Maestria Terminada">Terminada</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Maes-Inco">
+                                                    <input type="radio" class="form-check-input" id="Maes-inco" name="Nivel de estudios"
+                                                    value="Maestria Incompleta">Incompleta</label>
+                                            </div>
+                                        </div>
+                                        <div class="opcion8">
+                                            <h6>Doctorado:</h6>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Doc-Term">
+                                                    <input type="radio" class="form-check-input" id="Doc-Term" name="Nivel de estudios"
+                                                    value="Doctorado Terminada">Terminada</label>
+                                            </div>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label" for="Doc-Inco">
+                                                    <input type="radio" class="form-check-input" id="Doc-inco" name="Nivel de estudios"
+                                                    value="Doctorado Incompleta">Incompleta</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cuestion1">
+                                        <h5><b>Datos Laborales:</b></h5>
+                                        <div class="cuestion1">
+                                            <h6>Ocupacion/Profesión/Puesto:</h6>
+                                            <input type="text" class="form-control-sm" size="117" id="OPP" name="Ocupacion/Profesión/Puesto">
+                                        </div>
+                                        <div class="cuestion2">
+                                            <h6>Departamento/Sección/Área:</h6>
+                                            <input type="text" class="form-control-sm" size="117" id="DSA" name="Departamento/Sección/Área">
+                                        </div>
+                                    </div>
+                                        <div class="cuestion3">
+                                            <h5>Tipo de puesto:</h5>
+                                            <div>
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label" for="Tipo-O">
+                                                        <input type="radio" class="form-check-input" id="Tipo-O" name="Tipo de puesto"
+                                                        value="Operativo">Operativo</label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label" for="tipo-S">
+                                                        <input type="radio" class="form-check-input" id="tipo-s" name="Tipo de puesto"
+                                                         value="Supervisión">Supervisión </label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label" for="p-t">
+                                                        <input type="radio" class="form-check-input" id="p-t" name="Tipo de puesto"
+                                                         value="Profesional o Tecnico">Profesional
+                                                        o Técnico
+                                                    </label>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <label class="form-check-label" for="G">
+                                                        <input type="radio" class="form-check-input" id="G" name="Tipo de puesto" 
+                                                        value="Gerente">Gerente
+                                                    </label>
+                                                </div>
+                                            </div>
+                                                <div class="cuestion4">
+                                                <h5>Tipo de contratación:</h5>
+                                                <div>
+                                                    <div class="form-check-inline" >
+                                                        <label class="form-check-label" for="o-p">
+                                                            <input type="radio" class="form-check-input" id="o-p" name="Tipo de contratacion" 
+                                                            value="Por obra o proyecto">Por
+                                                            obra o proyecto
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check-inline" >
+                                                        <label class="form-check-label" for="t-i">
+                                                            <input type="radio" class="form-check-input" id="t-i" name="Tipo de contratacion"
+                                                            value="Tiempo indeterminado">Tiempo
+                                                            indeterminado
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="form-check-inline" >
+                                                        <label class="form-check-label" for="t-d">
+                                                            <input type="radio" class="form-check-input" id="t-d" name="Tipo de contratacion"
+                                                             value="Tiempo determinado (temporal)">Tiempo
+                                                            determinado (temporal)
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check-inline">
+                                                        <label class="form-check-label" for="H">
+                                                            <input type="radio" class="form-check-input" id="H" name="Tipo de contratacion"
+                                                                value="Honorarios">Honorarios
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="cuestion5">
+                                                    <h5>Tipo de personal:</h5>
+                                                    <div>
+                                                        <div class="form-check-inline" >
+                                                            <label class="form-check-label" for="S">
+                                                                <input type="radio" class="form-check-input" id="S" name="Tipo de personal"
+                                                                    value="Sindicalizado">Sindicalizado
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check-inline" >
+                                                            <label class="form-check-label" for="C">
+                                                                <input type="radio" class="form-check-input" id="C" name="Tipo de personal"
+                                                                    value="Confianza">Confianza
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="form-check-inline" >
+                                                            <label class="form-check-label" for="N">
+                                                                <input type="radio" class="form-check-input" id="N" name="Tipo de personal"
+                                                                    value="Ninguno">Ninguno
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cuestion5">
+                                                    <h5>Tipo de jornada de trabajo:</h5>
+                                                    <div>
+                                                        <div class="form-check-inline" >
+                                                            <label class="form-check-label" for="f-n">
+                                                                <input type="radio" class="form-check-input" id="f-n" name="Tipo de jornada de trabajo"
+                                                                    value="Fijo nocturno (entre las 20:00 y 6:00 hrs)">Fijo nocturno (entre las 20:00 y 6:00 hrs)
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check-inline" >
+                                                            <label class="form-check-label" for="f-d">
+                                                                <input type="radio" class="form-check-input" id="f-d" name="Tipo de jornada de trabajo"
+                                                                    value="Fijo diurno (entre las 6:00 y 20:00 hrs">Fijo diurno (entre las 6:00 y 20:00 hrs
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="form-check-inline" >
+                                                            <label class="form-check-label" for="f-m">
+                                                                <input type="radio" class="form-check-input" id="f-m" name="Tipo de jornada de trabajo"
+                                                                    value="Fijo mixto (combinación de nocturno y diurno)">Fijo mixto (combinación de nocturno y diurno)
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cuestion6">
+                                                    <h5>Realiza rotacion de turnos:</h5>
+                                                    <div>
+                                                        <div class="form-check-inline" >
+                                                            <label class="form-check-label" for="S">
+                                                                <input type="radio" class="form-check-input" id="S" name="Realiza rotacion de turnos"
+                                                                value="Si">Si
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="N">
+                                                                <input type="radio" class="form-check-input" id="N" name="Realiza rotacion de turnos"
+                                                                 value="No">No
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cuestion7">
+                                                    <h5>Experiencia (años)</h5>
+                                                    <p><b>Tiempo en el puesto actual</b></p>
+                                                    <div class="opcion1">
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="m-6">
+                                                                <input type="radio" class="form-check-input" id="m-6" name="Tiempo en el puesto actual"
+                                                                    value="Menos de 6 meses">Menos de 6 meses
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="e-10-14">
+                                                                <input type="radio" class="form-check-input" id="e-10-14" name="Tiempo en el puesto actual"
+                                                                    value="Entre 10 a 14 años">Entre 10 a 14 años </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="opcion2">
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="e-6 y 1">
+                                                                <input type="radio" class="form-check-input" id="e-6 y 1" name="Tiempo en el puesto actual"
+                                                                    value="Entre 6 meses y 1 año">Entre 6 meses y 1 año </label>                                                           
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="e-15-19">
+                                                                <input type="radio" class="form-check-input" id="e-15-19" name="Tiempo en el puesto actual"
+                                                                    value="Entre 15 a 19 años">Entre 15 a 19 años</label>                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="opcion3">
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="e-1-4">
+                                                                <input type="radio" class="form-check-input" id="e-1-4" name="Tiempo en el puesto actual"
+                                                                    value="Entre 1 a 4 años">Entre 1 a 4 años</label>                                                            
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="e-20-24">
+                                                                <input type="radio" class="form-check-input" id="e-20-24" name="Tiempo en el puesto actual"
+                                                                    value="Entre 20 a 24 años">Entre 20 a 24 años</label>                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="opcion4">
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="e-5-9">
+                                                                <input type="radio" class="form-check-input" id="e-5-9" name="Tiempo en el puesto actual"
+                                                                    value="Entre 5 a 9 años">Entre 5 a 9 años</label>                                                            
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="25-o mas">
+                                                                <input type="radio" class="form-check-input" id="25-o mas" name="Tiempo en el puesto actual" 
+                                                                value="25 años o más">25 años o más</label>                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cuestion7">
+                                                    <p><b> Tiempo experiencia laboral:</b></p>
+                                                    <div class="opcion1">
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="Menos de 6 meses">
+                                                                <input type="radio" class="form-check-input" id="menos6meses" name="Tiempo experiencia laboral"
+                                                                value="Menos de 6 meses">Menos de 6 meses </label>
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="10 a 14 años">
+                                                                <input type="radio" class="form-check-input" id="10-14a" name="Tiempo experiencia laboral"
+                                                                value="10-14 años">10 a 14 años</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="opcion2">
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="Menos de 6 meses">
+                                                                <input type="radio" class="form-check-input" id="6meses1año" name="Tiempo experiencia laboral"
+                                                                value="entre 6 meses 1 año">Ente 6 meses y 1 año </label>
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="Menos de 6 meses">
+                                                                <input type="radio" class="form-check-input" id="15-19a" name="Tiempo experiencia laboral"
+                                                                value="Ente 15 y 19 años">Ente 15 y 19 años </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="opcion3">
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="Menos de 6 meses">
+                                                                <input type="radio" class="form-check-input" id="1-4a" name="Tiempo experiencia laboral"
+                                                                value="Ente 1 y 4 años">1 a 4 años </label>
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="Menos de 6 meses">
+                                                                <input type="radio" class="form-check-input" id="20-24a" name="Tiempo experiencia laboral"
+                                                                value="Ente 20 y 24 años">Entre 20 a 24 años </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="opcion4">
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="Menos de 6 meses">
+                                                                <input type="radio" class="form-check-input" id="5-9a" name="Tiempo experiencia laboral"
+                                                                value="Ente 5 y 9 años">Entre 5 a 9 años </label>
+                                                        </div>
+                                                        <div class="form-check-inline">
+                                                            <label class="form-check-label" for="Menos de 6 meses">
+                                                                <input type="radio" class="form-check-input" id=">25a" name="Tiempo experiencia laboral"
+                                                                value="25 años o mas">25 años o mas </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </form>
+                            </section>
+
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btn-omitir">Omitir</button>
+                            <button type="button" class="btn btn-primary" id="btn-guardar">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+           
+            
+
+        </div>
+
+    </div>

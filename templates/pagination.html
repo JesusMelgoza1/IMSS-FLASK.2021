@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+</head>
+<body>
+{% set idPregunta = 1 %}
+{% for guia in encuestas %}
+
+<h1> {{guia}}</h1> 
+
+  {% for seccion in encuestas[guia] %}
+    {% if seccion != None %}
+
+            <h2 >{{seccion}}</h2> 
+
+                {% for preguntas in encuestas[guia][seccion] %}
+                        
+                    {% for pregunta in encuestas[guia][seccion][preguntas] %}
+                        
+                        <p id="pregunta" >{{idPregunta}} {{pregunta}}</p>
+                        {% for i in range(0,encuestas[guia][seccion][preguntas][pregunta]['respuestas']|length)  %} 
+                            {{ encuestas[guia][seccion][preguntas][pregunta]['respuestas'][i]}}
+                        {% endfor %}
+                        {% set idPregunta = idPregunta+1 %}
+            
+                    {% endfor %}
+                
+                {% endfor %}
+    {%else%}
+
+        {% for preguntas in encuestas[guia][seccion] %}
+
+        {% for pregunta in encuestas[guia][seccion][preguntas] %}
+
+            <p id="pregunta" > {{idPregunta}} {{pregunta}}</p>
+            {% for i in range(0,encuestas[guia][seccion][preguntas][pregunta]['respuestas']|length)  %} 
+                <p>{{ encuestas[guia][seccion][preguntas][pregunta]['respuestas'][i]}}</p>
+                <p>{{ encuestas[guia][seccion][preguntas][pregunta]['ponderacion'][i]}}</p>
+            {% endfor %}
+             {% set idPregunta = idPregunta+1 %}
+            
+
+        {% endfor %}
+    
+    {% endfor %}
+
+
+
+
+
+
+    {%endif%}
+    {% endfor %} 
+
+{% endfor %}
+
+
+</body>
+</html> 

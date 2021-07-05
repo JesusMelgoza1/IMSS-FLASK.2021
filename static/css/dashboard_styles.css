@@ -1,0 +1,36 @@
+body{
+    background-image: url(/static/images/peter-de-lucia-anrbd2OzvVY-unsplash.jpg);
+    background-size: cover;
+}
+
+#main_container{
+    padding: 10px;
+    margin-top: 20px;
+    background-color: aqua;
+}
+#tam-jum-muestra{
+    padding: 5%;
+    margin-top: 3%;
+    background-color: white;
+}
+#jum-muestra{
+    padding: 5%;
+    margin-top: 3%;
+    background-color: white;
+    border-radius: 7px;
+}
+#btns-encuestas{
+    padding-bottom: 5%;
+}
+#title-modal-DatosEncuestado{
+    margin: auto;
+}
+#modal-header{
+    background: #206a5d;
+    color: white;
+    text-align: center;
+}
+.close{
+    background: white;
+    color: black;
+}
